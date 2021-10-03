@@ -21,7 +21,7 @@ pipeline {
 
     stage('deploy/start') {
       steps {
-        catchError(buildResult: 'Been up 5 minutes...now exiting...') {
+        catchError(stageResult: 'Been up 5 minutes...now exiting...') {
           timeout(time: 5, unit: 'MINUTES') {
             dir(path: 'heroes-react') {
               bat 'npm run quick'

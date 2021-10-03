@@ -14,6 +14,7 @@ pipeline {
           bat 'npm run build -- --prod'
         }
 
+        archiveArtifacts 'build/**'
       }
     }
 

@@ -21,7 +21,7 @@ pipeline {
 
     stage('deploy/start') {
       steps {
-        catchError(stageResult: 'Been up 5 minutes...now exiting...') {
+        catchError(buildResult: 'Been up 5 minutes...now exiting...', catchInterruptions: true) {
           timeout(time: 5, unit: 'MINUTES') {
             dir(path: 'heroes-react')
           }

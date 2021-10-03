@@ -18,6 +18,15 @@ pipeline {
       }
     }
 
+    stage('deploy/start') {
+      steps {
+        retry(count: 5) {
+          dir(path: 'heroes-angular')
+        }
+
+      }
+    }
+
   }
   environment {
     build = '-p 3000:3000'

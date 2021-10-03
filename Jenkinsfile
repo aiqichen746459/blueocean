@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'heros'
-    }
-
-  }
+  agent any
   stages {
     stage('build') {
       steps {
@@ -27,9 +22,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    build = '-p 3000:3000'
-    deploy = '-p 3000:3000'
   }
 }

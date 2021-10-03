@@ -22,7 +22,7 @@ pipeline {
     stage('deploy/start') {
       steps {
         warnError(message: 'Been up 5 minutes...now exiting...') {
-          timeout(time: 5, unit: 'MINUTES') {
+          timeout(time: 10, unit: 'MINUTES', activity: true) {
             dir(path: 'heroes-angular') {
               bat 'npm run quick'
             }

@@ -21,7 +21,7 @@ pipeline {
 
     stage('deploy/start') {
       steps {
-        warnError(message: 'Been up 5 minutes...now exiting...', catchInterruptions: true) {
+        warnError(message: 'Been up 5 minutes...now exiting...') {
           timeout(time: 5, unit: 'MINUTES') {
             dir(path: 'heroes-react') {
               bat 'npm run'

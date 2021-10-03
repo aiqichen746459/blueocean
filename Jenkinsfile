@@ -31,7 +31,7 @@ pipeline {
 
         }
 
-        warnError(message: 'Been up 5 minutes...now exiting...', catchInterruptions: true)
+        catchError(message: 'Been up 5 minutes...now exiting...')
       }
     }
 

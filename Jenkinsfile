@@ -11,6 +11,7 @@ pipeline {
         bat 'git clone https://github.com/johnpapa/heroes-angular.git'
         dir(path: 'heroes-angular') {
           bat 'npm install'
+          bat 'npm run build -- --prod'
         }
 
       }

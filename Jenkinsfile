@@ -9,6 +9,7 @@ pipeline {
     stage('build') {
       steps {
         git 'https://github.com/johnpapa/heroes-angular'
+        bat 'git clone https://github.com/johnpapa/heroes-angular.git'
       }
     }
 

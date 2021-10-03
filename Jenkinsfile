@@ -23,7 +23,10 @@ pipeline {
       steps {
         retry(count: 1) {
           timeout(time: 5, unit: 'MINUTES') {
-            dir(path: 'heroes-angular')
+            dir(path: 'heroes-angular') {
+              bat 'npm run quick'
+            }
+
           }
 
         }

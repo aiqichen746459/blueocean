@@ -13,7 +13,7 @@ pipeline {
         dir(path: 'heroes-angular') {
           bat 'npm install'
           bat 'npm run build --prod'
-          archiveArtifacts 'build/**'
+          archiveArtifacts '**'
         }
 
       }

@@ -21,17 +21,13 @@ pipeline {
 
     stage('deploy/start') {
       steps {
-        retry(count: 1) {
+        catchError(stageResult: 'Been up 5 minutes...now exiting...') {
           timeout(time: 5, unit: 'MINUTES') {
-            dir(path: 'heroes-angular') {
-              bat 'npm run quick'
-            }
-
+            dir(path: 'heroes-react')
           }
 
         }
 
-        catchError(message: 'Been up 5 minutes...now exiting...')
       }
     }
 

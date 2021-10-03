@@ -13,7 +13,7 @@ pipeline {
         dir(path: 'heroes-angular') {
           bat 'npm install'
           bat 'npm run build --prod'
-          archiveArtifacts '**'
+          archiveArtifacts 'build/**'
         }
 
       }
@@ -21,7 +21,7 @@ pipeline {
 
     stage('deploy/start') {
       steps {
-        retry(count: 5) {
+        retry(count: 1) {
           timeout(time: 5, unit: 'MINUTES') {
             dir(path: 'heroes-angular')
           }

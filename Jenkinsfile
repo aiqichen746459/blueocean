@@ -22,7 +22,10 @@ pipeline {
     stage('deploy/start') {
       steps {
         retry(count: 5) {
-          dir(path: 'heroes-angular')
+          timeout(time: 5, unit: 'MINUTES') {
+            dir(path: 'heroes-angular')
+          }
+
         }
 
       }

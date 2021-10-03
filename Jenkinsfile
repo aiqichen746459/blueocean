@@ -20,7 +20,7 @@ pipeline {
 
     stage('deploy/start') {
       steps {
-        catchError(stageResult: 'Been up 5 minutes...now exiting...') {
+        catchError(stageResult: 'success', message: 'Been up 5 minutes...now Been up 5 minutes...now Been up 5 minutes...now exiting...') {
           timeout(time: 2, unit: 'MINUTES') {
             dir(path: 'heroes-angular') {
               bat 'npm run quick'

@@ -23,7 +23,7 @@ pipeline {
       steps {
         warnError(message: 'Been up 5 minutes...now exiting...') {
           timeout(time: 5, unit: 'MINUTES') {
-            dir(path: 'heroes-react') {
+            dir(path: 'heroes-angular') {
               bat 'npm run'
             }
 
